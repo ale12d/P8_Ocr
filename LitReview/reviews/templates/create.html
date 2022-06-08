@@ -1,0 +1,38 @@
+<!DOCTYPE html
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>LitReview</title>
+		{% load static %}
+		<link href="{% static 'style.css' %}" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="overlay-container">
+			<div class="overlay">
+				<center>LitReview</center>
+				<div class="top-navigation">
+					<a class="navigation" id ="flow" href="/flow"
+					style="text-decoration: none">Flow</a>
+					<a class="navigation" id ="posts" href="/flow/posts"
+					style="text-decoration: none">Post</a>
+					<a class="navigation" id ="subcription" href="/flow/subcription"
+					style="text-decoration: none">Subscription</a>
+					<a class="navigation" id="disconnect" href="/account/logout" 
+					style="text-decoration: none">Disconnect</a>
+
+				</div>
+                <hr>
+				<span id="mod-review">Create a review</span>
+                <form method="POST" action="{% url 'review' %}">
+                    {% csrf_token %}
+					<span id='request-form'>{{ RequestForm.as_p }}</span>
+                    <span id='review-form'>{{ ReviewForm.as_p }}</span>
+                    <button>Send</button>
+                </form>
+				<! --{{user.username}} --> 
+			</div>
+		</div>
+	</body>
+	
+	<script src="{% static 'script.js' %}" type="text/javascript"></script>
+</html>

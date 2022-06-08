@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+body {
+	font-weight: bold;
+	margin: 0;
+}
+
+.overlay {
+
+	background: #251217;
+	background: -webkit-linear-gradient(to right, #ffffff, #eee8e9);
+	background: linear-gradient(to right, #ffffff, #eee8e9);
+	color: #ffffff;
+	position: absolute;
+	margin-left: 2%;
+	height: 100%;
+	width: 96%;
+	z-index: 1;
+}
+
+.overlay-container {
+	background: #ff416c;
+	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+	background: linear-gradient(to right, #ff4b2b, #ff416c);
+	color: #ffffff;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+
+center {
+	font-size: 24px;
+	color: #251217;
+	top: 1%;
+	text-align:center;
+	font-family: "Montserrat", sans-serif;
+}
+
+#flow{
+	color: rgb(77, 75, 75);
+}
+
+#disconnect{
+	position: relative;
+
+}
+
+#subcription{
+	position: relative;
+}
+
+a:hover {
+	color: rgb(77, 75, 75);
+	}
+
+.top-navigation{
+	position: absolute;
+	right: 1%;
+	top: 1%;
+}
+
+.navigation {
+	color: rgb(189, 189, 189);
+	font-family: "Montserrat", sans-serif;
+	margin-left: 1em
+	
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid rgb(151, 146, 146);
+	width:40%
+	
+  }
+
+.button-review {
+	background: #ff416c;
+	border-radius: 999px;
+	box-shadow: #ff416c 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 8px 18px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: fit-content;
+	word-break: break-word;
+	border: 0;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+  }
+
+  
+.buttons-flow {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
