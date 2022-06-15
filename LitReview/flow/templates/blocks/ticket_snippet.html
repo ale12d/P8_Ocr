@@ -1,0 +1,11 @@
+<div class="ticket-content"> 
+    {% if post.user == user %}
+        <a id="author">You asked for a review</a>
+    {% elif post.user != user %}
+        <a id="author">{{post.user}} asked for a review</a>
+    {%endif%}
+    <a id="post-time">{{post.time_created}}</a>
+    <a id="post-title"> Title : {{post.title}}</a>
+    <a id="post-desc"> Description : {{post.description}}</a>
+    <button class="button-review" id="reply-review">Create a review </button>
+</div>

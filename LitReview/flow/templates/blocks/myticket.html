@@ -1,0 +1,18 @@
+{% if post.user == user %}
+<div class="ticket-content"> 
+    <a id="author">You asked for a review</a>
+    <a id="post-time">{{post.time_created}}</a>
+    <a id="post-title"> Title : {{post.title}}</a>
+    <a id="post-desc"> Description : {{post.description}}</a>
+    <span class="button-modif">
+        <form method="post" action="{% url 'modify-ticket' post.id %}">
+            {% csrf_token %}
+            <button class="button-review">Modify</button>
+        </form>
+        <form method="post" action="{% url 'delete-ticket' post.id %}">
+            {% csrf_token %}
+            <button class="button-review">Delete</button>
+        </form>
+    </span>
+</div>
+{%endif%}

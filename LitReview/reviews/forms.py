@@ -18,6 +18,7 @@ class TicketForm(ModelForm):
 class ReviewForm(ModelForm):
     headline = forms.fields.CharField(max_length=128)
     body = forms.fields.CharField(max_length=8192, strip=False)
+
     class Meta:
         model = Review
         fields = [

@@ -1,0 +1,23 @@
+<div class="review-content"> 
+    
+    {% if post.user == user %}
+        <a id="author">You posted a review</a>
+    {% elif post.user != user %}
+        <a id="author">{{post.user}} posted a review</a>
+    {%endif%}
+
+    <a id="post-time">{{post.time_created}}</a>
+    <a id="post-headline-body">{{post.headline}}  -  {{post.body}}</a>
+
+    <div class="ticket-content" id ="ticket-answer"> 
+        {% if post.ticket.user == user %}
+            <a id="author">You asked for a review</a>
+        {% elif post.ticket.user != user %}
+            <a id="author">{{post.user}} asked for a review</a>
+        {%endif%}
+        <a id="post-time">{{post.ticket.time_created}}</a>
+        <a id="post-title"> Title : {{post.ticket.title}}</a>
+        <a id="post-desc"> Description : {{post.ticket.description}}</a>
+    </div>
+    
+</div>

@@ -9,25 +9,20 @@
 	<body>
 		<div class="overlay-container">
 			<div class="overlay">
-				<center>LitReview</center>
-				<div class="top-navigation">
-					<a class="navigation" id ="flow" href="/flow"
-					style="text-decoration: none">Flow</a>
-					<a class="navigation" id ="posts" href="/flow/posts"
-					style="text-decoration: none">Post</a>
-					<a class="navigation" id ="subcription" href="/flow/subcription"
-					style="text-decoration: none">Subscription</a>
-					<a class="navigation" id="disconnect" href="/account/logout" 
-					style="text-decoration: none">Disconnect</a>
-
+				<div class="header">
+				{% include 'blocks/header.html' %}
 				</div>
-
-				<hr>
 				<div class="buttons-flow">
 					<button class="button-review" id="button-request">Request a review</button>
 					<button class="button-review" id="button-create-review">Create a review</button>
 				</div>
-				<! --{{user.username}} --> 
+				<div class="posts-contents">
+					{% include 'blocks/posts.html' %}
+				</div>
+			
+			<div class="footnote">
+				<span id="user">user: {{user.username}}<span>
+			</div>
 			</div>
 		</div>
 	</body>

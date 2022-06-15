@@ -17,4 +17,10 @@ urlpatterns = [
 
     path('reviews/create', reviews_views.create_review, name ="review"),
     path('reviews/request', reviews_views.request_review, name ="request"),
+    
+    path('reviews/deleteticket/<int:id>/', reviews_views.delete_ticket, name ="delete-ticket"),
+    path('reviews/deletereview/<int:id>/', reviews_views.delete_review, name ="delete-review"),
+
+    path('reviews/modifyticket/<int:id>/', reviews_views.modify_ticket, name ="modify-ticket"),
+    path('reviews/modifyreview/<int:id>/', reviews_views.modify_review, name ="modify-review"),
 ]

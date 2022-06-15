@@ -10,16 +10,14 @@
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="header">
-				{% include 'blocks/header.html' %}
+					{% include 'blocks/header.html' %}
 				</div>	
-				<h3>Create a review</h3>
-                <form class="form" method="POST" action="{% url 'review' %}">
+                <h3>Modify your request</h3>
+                <form class="form" method="POST" action="">
                     {% csrf_token %}
-					<span id='request-form'>{{ RequestForm.as_p }}</span>
-                    <span id='review-form'>{{ ReviewForm.as_p }}</span>
-                    <button class="send-button" >Submit</button>
+                    <span id='request-form'>{{ form.as_p }}</span>
+                    <button class="send-button"> Modify</button>
                 </form>
-
 				<div class="footnote">
 					<span id="user">user: {{user.username}}<span>
 				</div>

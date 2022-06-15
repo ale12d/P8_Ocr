@@ -1,0 +1,28 @@
+{% if post.user == user %}
+<div class="review-content"> 
+    <a id="author">You posted a review</a>
+    <a id="post-time">{{post.time_created}}</a>
+    <a id="post-headline-body">{{post.headline}}  -  {{post.body}}</a>
+
+    <div class="ticket-content" id ="ticket-answer"> 
+        {% if post.ticket.user == user %}
+            <a id="author">You asked for a review</a>
+        {% elif post.ticket.user != user %}
+            <a id="author">{{post.user}} asked for a review</a>
+        {%endif%}
+        <a id="post-time">{{post.ticket.time_created}}</a>
+        <a id="post-title"> Title : {{post.ticket.title}}</a>
+        <a id="post-desc"> Description : {{post.ticket.description}}</a>
+    </div>
+    <span class="button-modif">
+        <form method="post" action="{% url 'modify-review' post.id %}">
+            {% csrf_token %}
+            <button class="button-review">Modify</button>
+        </form>
+        <form method="post" action="{% url 'delete-review' post.id %}">
+            {% csrf_token %}
+            <button class="button-review">Delete</button>
+        </form>
+    </span>
+</div>
+{%endif%}

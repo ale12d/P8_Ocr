@@ -3,41 +3,34 @@
 body {
 	font-weight: bold;
 	margin: 0;
+	background: linear-gradient(to right, #ffffff, #eee8e9);
 }
 
 .overlay {
 
 	background: #251217;
-	background: -webkit-linear-gradient(to right, #ffffff, #eee8e9);
 	background: linear-gradient(to right, #ffffff, #eee8e9);
 	color: #ffffff;
 	position: absolute;
-	margin-left: 2%;
 	height: 100%;
-	width: 96%;
+	width: 100%;
 	z-index: 1;
 }
 
-.overlay-container {
-	background: #ff416c;
-	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-	background: linear-gradient(to right, #ff4b2b, #ff416c);
-	color: #ffffff;
-	position: relative;
-	height: 100%;
-	width: 100%;
-	z-index: 0;
-}
-
-center {
+#home {
 	font-size: 24px;
 	color: #251217;
-		top: 1%;
+    position: absolute;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
 }
 
-center {
-	text-align:center;
-	font-family: "Montserrat", sans-serif;
+#flow{
+	position: relative;
 }
 
 #disconnect{
@@ -46,7 +39,6 @@ center {
 }
 
 #subcription{
-	position: relative;
 	color: rgb(77, 75, 75);
 }
 
@@ -55,9 +47,11 @@ a:hover {
 	}
 
 .top-navigation{
-	position: absolute;
-	right: 1%;
-	top: 1%;
+	grid-column: 3 /3;
+	grid-row: 1 / 3;
+	text-align: right;
+	margin-top:2%;
+	margin-right:2%;
 }
 
 .navigation {
@@ -67,9 +61,44 @@ a:hover {
 	
 }
 
+.header{
+	display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, [col] auto ) ;
+    grid-template-rows: repeat(2, [row] auto  );
+}
+
 hr {
 	border: 0;
 	border-top: 2px solid rgb(151, 146, 146);
-	width:40%
-	
-  }
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2%;
+}
+
+.footnote{
+	position: absolute; 
+	left: 1%; 
+	top: 1%;
+	z-index: 1;
+}
+
+#user {
+	color: #251217;
+	font-family: "Montserrat", sans-serif;
+	font-size: 12px;
+	position: fixed;
+	left: 1%;
+	bottom: 1%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h3 {
+	text-align:center;
+	color: #251217;
+	font-family: "Montserrat", sans-serif;
+}
