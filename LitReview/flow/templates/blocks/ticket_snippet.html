@@ -3,9 +3,15 @@
         <a id="author">You asked for a review</a>
     {% elif post.user != user %}
         <a id="author">{{post.user}} asked for a review</a>
-    {%endif%}
+    {% endif%}
     <a id="post-time">{{post.time_created}}</a>
     <a id="post-title"> Title : {{post.title}}</a>
     <a id="post-desc"> Description : {{post.description}}</a>
-    <button class="button-review" id="reply-review">Create a review </button>
+    {% if post.images != "" %}
+        <img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{post.images.url}}" />
+    {%endif%}
+    <form method="post" id ="reply-review" action="{% url 'reply' post.id %}">
+        {% csrf_token %}
+        <button class="button-review" id="reply-review-button">Reply to  a review </button>
+    </form>
 </div>

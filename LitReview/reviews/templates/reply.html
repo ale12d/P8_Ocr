@@ -1,0 +1,44 @@
+<!DOCTYPE html
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>LitReview</title>
+		{% load static %}
+		<link href="{% static 'style.css' %}" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="header">
+					{% include 'blocks/header.html' %}
+				</div>	
+                <h3>Reply to a review</h3>
+                <div class="ticket-content"> 
+                    {% if ticket.user == user %}
+                        <a id="author">You asked for a review</a>
+                    {% else %}
+                        <a id="author">{{ticket.user}} asked for a review</a>
+                    {% endif %}
+                    <a id="ticket-time">{{ticket.time_created}}</a>
+                    <a id="ticket-title"> Title : {{ticket.title}}</a>
+                    <a id="ticket-desc"> Description : {{ticket.description}}</a>
+					{% if post.images != "" %}
+						<img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{ticket.images.url}}" />
+					{%endif%}
+                </div>
+
+                <form class="form" method="POST" action="">
+                    {% csrf_token %}
+                    <span id='request-form'>{{ ReviewForm.as_p }}</span>
+
+                    <button class="send-button"> Submit</button>
+                </form>
+				<div class="footnote">
+					<span id="user">user: {{user.username}}<span>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script src="{% static 'script.js' %}" type="text/javascript"></script>
+</html>

@@ -3,23 +3,23 @@
 body {
 	font-weight: bold;
 	margin: 0;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background:#edf2ff;
 }
 
 .overlay {
 
 	background: #251217;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background: #edf2ff;
 	color: #ffffff;
 	position: absolute;
-	height: 100%;
+	height: auto;
 	width: 100%;
 	z-index: 1;
 }
 
 #home {
 	font-size: 24px;
-	color: #251217;
+	color: rgb(77, 75, 75);
     position: absolute;
 	right: 0;
 	left: 0;
@@ -30,7 +30,7 @@ body {
 }
 
 #flow{
-	position: relative;
+	position: relative
 }
 
 #disconnect{
@@ -39,11 +39,11 @@ body {
 }
 
 #subcription{
-	color: rgb(77, 75, 75);
+	color: #88a4ff;
 }
 
-a:hover {
-	color: rgb(77, 75, 75);
+.navigation:hover {
+	color: #88a4ff;
 	}
 
 .top-navigation{
@@ -54,18 +54,18 @@ a:hover {
 	margin-right:2%;
 }
 
-.navigation {
-	color: rgb(189, 189, 189);
-	font-family: "Montserrat", sans-serif;
-	margin-left: 1em
-	
-}
-
 .header{
 	display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(3, [col] auto ) ;
     grid-template-rows: repeat(2, [row] auto  );
+}
+
+.navigation {
+	color: rgb(77, 75, 75);
+	font-family: "Montserrat", sans-serif;
+	margin-left: 1em
+	
 }
 
 hr {
@@ -79,11 +79,61 @@ hr {
 	margin-top: 2%;
 }
 
+.content{
+	border-radius: 10px;
+	margin-bottom: 3%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] auto ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	box-shadow: 4px 8px 12px #c9c9c9;
+	width: 75%;
+	margin: 0 auto;
+
+}
+
+.button-review {
+	background: linear-gradient(to right, #567dff, #88a4ff);
+	border: 0ch;
+	border-radius: 10px;
+	box-shadow: #567dff 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 8px 18px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: fit-content;
+	word-break: break-word;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+  }
+
+  
+.buttons-flow {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .footnote{
 	position: absolute; 
 	left: 1%; 
 	top: 1%;
 	z-index: 1;
+
 }
 
 #user {
@@ -101,4 +151,10 @@ h3 {
 	text-align:center;
 	color: #251217;
 	font-family: "Montserrat", sans-serif;
+}
+
+#followers{
+	color: #251217;
+	font-family: "Montserrat", sans-serif;
+	list-style-type: none;
 }

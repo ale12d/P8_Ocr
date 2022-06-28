@@ -4,6 +4,9 @@
     <a id="post-time">{{post.time_created}}</a>
     <a id="post-title"> Title : {{post.title}}</a>
     <a id="post-desc"> Description : {{post.description}}</a>
+    {% if post.images != "" %}
+        <img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{post.images.url}}" />
+    {%endif%}
     <span class="button-modif">
         <form method="post" action="{% url 'modify-ticket' post.id %}">
             {% csrf_token %}

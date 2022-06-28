@@ -3,13 +3,13 @@
 body {
 	font-weight: bold;
 	margin: 0;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background:#edf2ff;
 }
 
 .overlay {
 
 	background: #251217;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background: #edf2ff;
 	color: #ffffff;
 	position: absolute;
 	height: auto;
@@ -19,7 +19,7 @@ body {
 
 #home {
 	font-size: 24px;
-	color: #251217;
+	color: rgb(77, 75, 75);
     position: absolute;
 	right: 0;
 	left: 0;
@@ -33,21 +33,20 @@ body {
 	position: relative;
 }
 
-#posts{
-	color: rgb(77, 75, 75);
-}
-
 #disconnect{
 	position: relative;
 
 }
 
+#posts{
+	color: #88a4ff
+}
 #subcription{
 	position: relative;
 }
 
-a:hover {
-	color: rgb(77, 75, 75);
+.navigation:hover {
+	color: #88a4ff;
 	}
 
 .top-navigation{
@@ -58,18 +57,18 @@ a:hover {
 	margin-right:2%;
 }
 
-.navigation {
-	color: rgb(189, 189, 189);
-	font-family: "Montserrat", sans-serif;
-	margin-left: 1em
-	
-}
-
 .header{
 	display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(3, [col] auto ) ;
     grid-template-rows: repeat(2, [row] auto  );
+}
+
+.navigation {
+	color: rgb(77, 75, 75);
+	font-family: "Montserrat", sans-serif;
+	margin-left: 1em
+	
 }
 
 hr {
@@ -83,11 +82,11 @@ hr {
 	margin-top: 2%;
 }
 
-
 .button-review {
-	background: rgb(128, 141, 255);
+	background: linear-gradient(to right, #567dff, #88a4ff);
+	border: 0ch;
 	border-radius: 10px;
-	box-shadow: rgb(128, 141, 255) 0 10px 20px -10px;
+	box-shadow: #567dff 0 10px 20px -10px;
 	box-sizing: border-box;
 	color: #FFFFFF;
 	cursor: pointer;
@@ -103,12 +102,8 @@ hr {
 	touch-action: manipulation;
 	width: fit-content;
 	word-break: break-word;
-	border: 1px solid black;
-	margin-left: 1em;
-	margin-right: 1em;
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
+
+  }
 
   
 .buttons-flow {
@@ -138,10 +133,10 @@ hr {
 
 .posts-contents{
 	margin-top: 10%;
-	color: #251217;
+	color: #363636;
 	margin: 0 auto;
 	width: 75%;
-	font-family: "Montserrat", sans-serif;
+	font-family: 'proxima-nova', sans-serif;
 
 }
 
@@ -154,6 +149,7 @@ hr {
 	margin-right: 10%;
 	margin-top: 4%;
 	text-align: right;
+	
 }
 
 #post-title{
@@ -181,42 +177,36 @@ hr {
 	margin-left: 2%;
 }
 
-.review-content{
-	border: 1px solid black;
-	border-radius: 10px;
-	margin-bottom: 1%;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, [col] auto ) ;
-    grid-template-rows: repeat(3, [row] auto  );
-	background-color: rgb(240, 240, 240);
-	padding: 10px;
-	box-shadow: 4px 8px 12px #888888;
-
-
-}
-
-.ticket-content{
-	border: 1px solid black;
-	border-radius: 10px;
-	margin-bottom: 1%;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, [col] auto ) ;
-    grid-template-rows: repeat(3, [row] auto  );
-	background-color: rgb(240, 240, 240);
-	padding: 10px;
-	box-shadow: 4px 8px 12px #888888;
-
-
-	
-}
-
 .button-modif{
 	grid-column: 5 /5;
 	grid-row: 5 / 5;
 	text-align: right;
-	text-align: end;
+}
+
+.review-content{
+	border-radius: 10px;
+	margin-bottom: 3%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] auto ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	box-shadow: 4px 8px 12px #c9c9c9;
+
+}
+
+.ticket-content{
+	border-radius: 10px;
+	margin-bottom: 3%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] auto ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	box-shadow: 4px 8px 12px #c9c9c9;
+	
 }
 
 #reply-review{
@@ -231,14 +221,32 @@ hr {
 	width: 100%;
     margin-left: 15%;
     margin-right: auto;
-	background-color: rgb(247, 247, 247);
+	background-color: rgb(250, 252, 255);
 	padding: 10px;
-	box-shadow: 2px 7px 10px #888888 inset;
-
+	border: 1px solid #d0dbff;
+	box-shadow: 0px 0px 0px #c9c9c9;
 }
 
 h3 {
 	text-align:center;
 	color: #251217;
 	font-family: "Montserrat", sans-serif;
+}
+
+#buttons{
+	grid-column: 5 /5;
+	grid-row: 5 / 5;
+	text-align: right;
+}
+
+#post-images{
+	position: relative;
+	height: 200px;
+	width: 140px;
+	grid-column: 1 /5;
+	grid-row: 5 / 5;
+	margin-left: 2%;
+	margin-top: 3%;
+	border: 1px solid #567dff;
+	box-shadow: 2px 4px 6px #2e2e2e;
 }

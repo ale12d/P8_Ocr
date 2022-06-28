@@ -13,12 +13,35 @@
 				{% include 'blocks/header.html' %}
 				</div>	
 				<h3>Follow other users</h3>
-				<form method="POST">
-					{% csrf_token %}
-					{{followform.as_p}}
-					<button type="submit" >Confirmer</button>
-				</form>
-				
+				<div class="content">
+					<form method="POST">
+						{% csrf_token %}
+						{{followform.as_p}}
+						<button type="submit" >Follow</button>
+					</form>
+				</div>
+				<h3>Subscriptions</h3>
+
+				<div class="content">
+					<ul>
+					{% for follow in follows %}
+					<form method="POST" action="{% url 'unfollow' follow.id %}">
+						{% csrf_token %}
+						<li id ="followers">{{follow.followed_user}}
+							<button type="unfollow">Unfollow</button>
+						</li>
+					</form>
+					{% endfor %}
+					</ul>
+				</div>
+				<h3>Subscribers</h3>
+				<div class="content">
+					<ul>
+					{% for follower in followers %}
+						<li id ="followers">{{follower.user}}</li>
+					{% endfor %}
+					</ul>
+				</div>
 			</div>
 			<div class="footnote">
 				<span id="user">user: {{user.username}}<span>

@@ -2,7 +2,17 @@
 <div class="review-content"> 
     <a id="author">You posted a review</a>
     <a id="post-time">{{post.time_created}}</a>
-    <a id="post-headline-body">{{post.headline}}  -  {{post.body}}</a>
+    <a id="post-headline-body">
+        {{post.headline}}  -  
+        {{post.body}}  -      
+        {% for item in "x"|ljust:5 %}
+            {% if  forloop.counter  <= post.rating %}
+                &#9733
+            {% else %}
+                &#9734
+            {%endif%}
+        {% endfor %}
+    </a>
 
     <div class="ticket-content" id ="ticket-answer"> 
         {% if post.ticket.user == user %}
@@ -13,8 +23,11 @@
         <a id="post-time">{{post.ticket.time_created}}</a>
         <a id="post-title"> Title : {{post.ticket.title}}</a>
         <a id="post-desc"> Description : {{post.ticket.description}}</a>
+        {% if post.ticket.images != "" %}
+            <img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{post.ticket.images.url}}" />
+        {%endif%}
     </div>
-    <span class="button-modif">
+    <div class = button-modif>
         <form method="post" action="{% url 'modify-review' post.id %}">
             {% csrf_token %}
             <button class="button-review">Modify</button>
@@ -23,6 +36,6 @@
             {% csrf_token %}
             <button class="button-review">Delete</button>
         </form>
-    </span>
+    </div>
 </div>
 {%endif%}

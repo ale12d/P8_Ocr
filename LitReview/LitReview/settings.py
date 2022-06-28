@@ -131,3 +131,8 @@ LOGIN_URL = '../account/login'
 LOGIN_REDIRECT_URL = 'flow/'
 LOGOUT_REDIRECT_URL = "account/login/"
 AUTH_USER_MODEL = 'account.User'
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

@@ -13,7 +13,7 @@
 					{% include 'blocks/header.html' %}
 				</div>	
                 <h3>Request a review</h3>
-                <form class="form" method="POST" action="{% url 'request' %}">
+                <form class="form" method="POST" action="{% url 'request' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <span id='request-form'>{{ RequestForm.as_p }}</span>
                     <button class="send-button"> Submit</button>

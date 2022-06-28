@@ -7,17 +7,32 @@
     {%endif%}
 
     <a id="post-time">{{post.time_created}}</a>
-    <a id="post-headline-body">{{post.headline}}  -  {{post.body}}</a>
+    <a id="post-headline-body">
+        {{post.headline}}  -  
+        {{post.body}}  -      
+        {% for item in "x"|ljust:5 %}
+            {% if  forloop.counter  <= post.rating %}
+                &#9733
+            {% else %}
+                &#9734
+            {%endif%}
+        {% endfor %}
+    </a>
+
 
     <div class="ticket-content" id ="ticket-answer"> 
         {% if post.ticket.user == user %}
             <a id="author">You asked for a review</a>
         {% elif post.ticket.user != user %}
-            <a id="author">{{post.user}} asked for a review</a>
+            <a id="author">{{post.ticket.user}} asked for a review</a>
         {%endif%}
         <a id="post-time">{{post.ticket.time_created}}</a>
         <a id="post-title"> Title : {{post.ticket.title}}</a>
         <a id="post-desc"> Description : {{post.ticket.description}}</a>
+        {% if post.ticket.images != "" %}
+            <img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{post.ticket.images.url}}" />
+        {%endif%}
+        
     </div>
     
 </div>

@@ -1,7 +1,11 @@
 {% for post in posts %}
-    {% if post.content_type == 'TICKET' %}
-        {% include 'blocks\ticket_snippet.html' %}
-    {% elif post.content_type == 'REVIEW' %}
-        {% include 'blocks\review_snippet.html' %}
-    {%endif%}
+    {% for follow in follows %}
+        {% if post.user == user or post.user == follow.followed_user %}
+            {% if post.content_type == 'TICKET' %}
+                {% include 'blocks\ticket_snippet.html' %}
+            {% elif post.content_type == 'REVIEW' %}
+                {% include 'blocks\review_snippet.html' %}
+            {%endif%}
+        {%endif%}
+    {% endfor %}	
 {% endfor %}	

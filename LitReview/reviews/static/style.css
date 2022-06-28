@@ -1,25 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 
 body {
 	font-weight: bold;
 	margin: 0;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background:#edf2ff;
 }
 
 .overlay {
 
 	background: #251217;
-	background: linear-gradient(to right, #ffffff, #eee8e9);
+	background: #edf2ff;
 	color: #ffffff;
 	position: absolute;
-	height: 100%;
+	height: auto;
 	width: 100%;
 	z-index: 1;
 }
 
 #home {
 	font-size: 24px;
-	color: #251217;
+	color: rgb(77, 75, 75);
     position: absolute;
 	right: 0;
 	left: 0;
@@ -30,7 +31,7 @@ body {
 }
 
 #flow{
-	position: relative;
+	color: relative;
 }
 
 #disconnect{
@@ -42,8 +43,8 @@ body {
 	position: relative;
 }
 
-a:hover {
-	color: rgb(77, 75, 75);
+.navigation:hover {
+	color: #88a4ff;
 	}
 
 .top-navigation{
@@ -54,10 +55,49 @@ a:hover {
 	margin-right:2%;
 }
 
+.header{
+	display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, [col] auto ) ;
+    grid-template-rows: repeat(2, [row] auto  );
+}
+
+.navigation {
+	color: rgb(77, 75, 75);
+	font-family: "Montserrat", sans-serif;
+	margin-left: 1em
+	
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid rgb(151, 146, 146);
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2%;
+}
+  
+.buttons-flow {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footnote{
+	position: absolute; 
+	left: 1%; 
+	top: 1%;
+	z-index: 1;
+
+}
+
 .send-button {
-	background: rgb(128, 141, 255);
+	background: linear-gradient(to right, #567dff, #88a4ff);
 	border-radius: 10px;
-	box-shadow: rgb(128, 141, 255) 0 10px 20px -10px;
+	box-shadow: 567dff 0 10px 20px -10px;
 	box-sizing: border-box;
 	color: #FFFFFF;
 	cursor: pointer;
@@ -73,43 +113,11 @@ a:hover {
 	touch-action: manipulation;
 	width: fit-content;
 	word-break: break-word;
-	border: 1px solid black;
+	border: 0ch;
 	margin-left: 1em;
 	margin-right: 1em;
 	margin-top: 2em;
 	margin-bottom: 2em;
-}
-
-.navigation {
-	color: rgb(189, 189, 189);
-	font-family: "Montserrat", sans-serif;
-	margin-left: 1em
-	
-}
-
-.header{
-	display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, [col] auto ) ;
-    grid-template-rows: repeat(2, [row] auto  );
-}
-
-hr {
-	border: 0;
-	border-top: 2px solid rgb(151, 146, 146);
-	position: absolute;
-	right: 0;
-	left: 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 2%;
-}
-
-.footnote{
-	position: absolute; 
-	left: 1%; 
-	top: 1%;
-	z-index: 1;
 }
 
 #user {
@@ -161,4 +169,64 @@ h3 {
 .form{
 	text-align: center;
 
+}
+
+.ticket-content{
+	border-radius: 10px;
+	margin-bottom: 3%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] auto ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	box-shadow: 4px 8px 12px #c9c9c9;
+	color: #363636;
+	width: 75%;
+	margin-top: 10%;
+	margin: 0 auto;
+	width: 75%;
+	font-family: 'proxima-nova', sans-serif;
+}
+
+#ticket-title{
+
+	grid-column: 1;
+	grid-row: 2 / 5;
+	margin-left: 2%;
+}
+
+#ticket-desc{
+
+	grid-column: 1;
+	grid-row: 5 / 5;
+	margin-left: 2%;
+}
+
+#ticket-time{
+	color: rgb(180, 180, 196);
+	grid-column: 5 / 5;
+	grid-row: 1;
+	font-size: 12px;
+	margin-right: 10%;
+	margin-top: 4%;
+	text-align: right;
+	
+}
+
+#author{
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+#post-images{
+	position: relative;
+	height: 200px;
+	width: 140px;
+	grid-column: 1 /5;
+	grid-row: 5 / 5;
+	margin-left: 2%;
+	margin-top: 3%;
+	border: 1px solid #567dff;
+	box-shadow: 2px 4px 6px #2e2e2e;
 }
