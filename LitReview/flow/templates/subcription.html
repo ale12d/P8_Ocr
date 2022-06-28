@@ -12,35 +12,43 @@
 				<div class="header">
 				{% include 'blocks/header.html' %}
 				</div>	
+				<hr>
 				<h3>Follow other users</h3>
 				<div class="content">
-					<form method="POST">
+					<form method="POST" id="form-follows">
 						{% csrf_token %}
 						{{followform.as_p}}
-						<button type="submit" >Follow</button>
+						<button id="follow-button" type="submit" >Follow</button>
 					</form>
 				</div>
 				<h3>Subscriptions</h3>
 
 				<div class="content">
-					<ul>
-					{% for follow in follows %}
-					<form method="POST" action="{% url 'unfollow' follow.id %}">
-						{% csrf_token %}
-						<li id ="followers">{{follow.followed_user}}
-							<button type="unfollow">Unfollow</button>
-						</li>
-					</form>
-					{% endfor %}
-					</ul>
+					<table border="1" class ="table-followers">
+						<tbody>
+							{% for follow in follows %}
+								<form method="POST" action="{% url 'unfollow' follow.id %}">
+									{% csrf_token %}
+									<tr>
+										<td class ="followers"> {{follow.followed_user}}
+										<td class="unfollow"><button class="unfollow-buttons" type="unfollow">Unfollow</button></td>
+									</tr>
+								</form>
+							{% endfor %}
+						</tbody>
+					</table>
 				</div>
 				<h3>Subscribers</h3>
 				<div class="content">
-					<ul>
-					{% for follower in followers %}
-						<li id ="followers">{{follower.user}}</li>
-					{% endfor %}
-					</ul>
+					<table border="1" class ="table-followers">
+						<tbody>
+							{% for follower in followers %}
+							<tr>
+								<td id ="followers">{{follower.user}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div class="footnote">

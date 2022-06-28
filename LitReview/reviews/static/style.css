@@ -230,3 +230,10 @@ h3 {
 	border: 1px solid #567dff;
 	box-shadow: 2px 4px 6px #2e2e2e;
 }
+
+#id_rating{
+	display:flex;
+	flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}

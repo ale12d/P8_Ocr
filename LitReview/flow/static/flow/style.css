@@ -69,14 +69,7 @@ body {
 }
 
 hr {
-	border: 0;
 	border-top: 2px solid rgb(151, 146, 146);
-	position: absolute;
-	right: 0;
-	left: 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 2%;
 }
 
 .button-review {

@@ -69,23 +69,12 @@ body {
 }
 
 hr {
-	border: 0;
 	border-top: 2px solid rgb(151, 146, 146);
-	position: absolute;
-	right: 0;
-	left: 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 2%;
 }
 
 .content{
 	border-radius: 10px;
 	margin-bottom: 3%;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, [col] auto ) ;
-    grid-template-rows: repeat(3, [row] auto  );
 	background-color: rgb(255, 255, 255);
 	padding: 10px;
 	box-shadow: 4px 8px 12px #c9c9c9;
@@ -154,7 +143,73 @@ h3 {
 }
 
 #followers{
+	padding-left: 8px;
+}
+
+#id_follows{
+	width: 90%;
 	color: #251217;
 	font-family: "Montserrat", sans-serif;
-	list-style-type: none;
+	}
+
+#follow-button{
+	background: linear-gradient(to right, #567dff, #88a4ff);
+	border: 0ch;
+	border-radius: 10px;
+	box-shadow: #567dff 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 8px 9px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: fit-content;
+	word-break: break-word;
+	display:block;
+	margin: 0 auto
+}
+
+.unfollow-buttons{
+	background: linear-gradient(to right, #fd4646, #ff6464);
+	border: 0ch;
+	box-shadow: #fd4646 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 4px 9px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: 100%;
+	word-break: break-word;
+	display:block;
+	margin: 0 auto
+}
+
+.table-followers{
+	border-collapse: collapse;
+	width: 100%;
+	color: #251217;
+	font-family: "Montserrat", sans-serif;
+}
+
+.unfollow{
+	width: 100px;
+}
+
+.followers{
+	padding-left: 8px;
 }
