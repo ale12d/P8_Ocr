@@ -19,18 +19,18 @@ urlpatterns = [
     path('flow/subcription', flow_views.subcription_page),
     path('flow/posts', flow_views.posts_page),
 
-    path('reviews/create', reviews_views.create_review, name ="review"),
-    path('reviews/request', reviews_views.request_review, name ="request"),
-    path('reviews/reply/<int:id>/', reviews_views.reply_ticket, name ="reply"),
-    
-    path('reviews/deleteticket/<int:id>/', reviews_views.delete_ticket, name ="delete-ticket"),
-    path('reviews/deletereview/<int:id>/', reviews_views.delete_review, name ="delete-review"),
+    path('reviews/create', reviews_views.create_review, name="review"),
+    path('reviews/request', reviews_views.request_review, name="request"),
+    path('reviews/reply/<int:id>/', reviews_views.reply_ticket, name="reply"),
 
-    path('reviews/modifyticket/<int:id>/', reviews_views.modify_ticket, name ="modify-ticket"),
-    path('reviews/modifyreview/<int:id>/', reviews_views.modify_review, name ="modify-review"),
+    path('reviews/deleteticket/<int:id>/', reviews_views.delete_ticket, name="delete-ticket"),
+    path('reviews/deletereview/<int:id>/', reviews_views.delete_review, name="delete-review"),
 
-    path('flow/subcription/unfollow/<int:id>/', flow_views.unfollow, name ="unfollow"),
-    
+    path('reviews/modifyticket/<int:id>/', reviews_views.modify_ticket, name="modify-ticket"),
+    path('reviews/modifyreview/<int:id>/', reviews_views.modify_review, name="modify-review"),
+
+    path('flow/subcription/unfollow/<int:id>/', flow_views.unfollow, name="unfollow"),
+
 ]
 
 if settings.DEBUG:

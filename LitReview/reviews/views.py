@@ -24,7 +24,8 @@ def create_review(request):
                 user=user, title=title, description=description, images=images
             )
             review = Review.objects.create(
-                user=user, ticket=ticket, headline=headline, body=body, rating=rating
+                user=user, ticket=ticket, headline=headline,
+                body=body, rating=rating
             )
 
             ticket.save()
@@ -37,7 +38,8 @@ def create_review(request):
         ticket_form = TicketForm()
 
     return render(
-        request, "create.html", {"ReviewForm": review_form, "RequestForm": ticket_form}
+        request, "create.html",
+        {"ReviewForm": review_form, "RequestForm": ticket_form}
     )
 
 
@@ -75,7 +77,8 @@ def reply_ticket(request, id):
             body = request.POST["body"]
             rating = request.POST["rating"]
             review = Review.objects.create(
-                user=user, ticket=ticket, headline=headline, body=body, rating=rating
+                user=user, ticket=ticket, headline=headline,
+                body=body, rating=rating
             )
             review.save()
 
@@ -84,7 +87,8 @@ def reply_ticket(request, id):
     else:
         review_form = ReviewForm()
 
-    return render(request, "reply.html", {"ReviewForm": review_form, "ticket": ticket})
+    return render(request, "reply.html",
+                  {"ReviewForm": review_form, "ticket": ticket})
 
 
 @login_required
@@ -110,7 +114,8 @@ def modify_ticket(request, id):
             form.save()
             return redirect("/flow/posts")
 
-    return render(request, "modif_request.html", {"ticket": ticket, "form": form})
+    return render(request, "modif_request.html",
+                  {"ticket": ticket, "form": form})
 
 
 @login_required
@@ -122,4 +127,5 @@ def modify_review(request, id):
             form.save()
             return redirect("/flow/posts")
 
-    return render(request, "modif_create.html", {"review": review, "form": form})
+    return render(request, "modif_create.html",
+                  {"review": review, "form": form})

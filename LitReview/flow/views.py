@@ -1,7 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
 from flow.forms import FollowUsersForm
 from reviews.models import Ticket, Review
 from django.db.models import CharField, Value
@@ -19,11 +17,13 @@ def main_flow(request):
     tickets = tickets.annotate(content_type=Value("TICKET", CharField()))
 
     posts = sorted(
-        chain(reviews, tickets), key=lambda post: post.time_created, reverse=True
+        chain(reviews, tickets),
+        key=lambda post: post.time_created, reverse=True
     )
     follows = FollowersCount.objects.filter(user=request.user)
 
-    return render(request, "flux.html", context={"posts": posts, "follows": follows})
+    return render(request, "flux.html",
+                  context={"posts": posts, "follows": follows})
 
 
 @login_required
@@ -35,7 +35,8 @@ def posts_page(request):
     tickets = tickets.annotate(content_type=Value("TICKET", CharField()))
 
     posts = sorted(
-        chain(reviews, tickets), key=lambda post: post.time_created, reverse=True
+        chain(reviews, tickets),
+        key=lambda post: post.time_created, reverse=True
     )
     return render(request, "posts.html", context={"posts": posts})
 
@@ -53,7 +54,7 @@ def subcription_page(request):
                     FollowersCount.objects.create(
                         user=request.user, followed_user=followed_user
                     )
-                except:
+                except Exception:
                     pass
 
     follows = FollowersCount.objects.filter(user=request.user)
@@ -62,7 +63,8 @@ def subcription_page(request):
     return render(
         request,
         "subcription.html",
-        context={"followform": followform, "follows": follows, "followers": followers},
+        context={"followform": followform, "follows": follows,
+                 "followers": followers},
     )
 
 
