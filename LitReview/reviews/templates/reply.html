@@ -22,7 +22,7 @@
                     <a id="ticket-time">{{ticket.time_created}}</a>
                     <a id="ticket-title"> Title : {{ticket.title}}</a>
                     <a id="ticket-desc"> Description : {{ticket.description}}</a>
-					{% if post.images %}
+					{% if ticket.images %}
 						<img id = "post-images" src="http://127.0.0.1:8000{{ MEDIA_URL }}{{ticket.images.url}}" />
 					{%endif%}
                 </div>
